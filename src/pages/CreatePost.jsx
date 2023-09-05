@@ -58,12 +58,6 @@ const CreatePost = () => {
       method: 'POST',
       body: data, // Send the FormData with the request
     })
-      .then((response) => {
-        // Handle the response...
-      })
-      .catch((error) => {
-        // Handle errors...
-      });
   };
 
   return (
