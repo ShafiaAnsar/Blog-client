@@ -58,6 +58,7 @@ const [redirect ,setRedirect] = useState(false)
     const response=await fetch('http://localhost:4000/post', {
       method: 'POST',
       body: data, // Send the FormData with the request
+      credentials:'include'
     })
     if( response.ok){
       setRedirect(true)

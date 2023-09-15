@@ -1,18 +1,20 @@
-import React from 'react'
-
-const Post = () => {
+import {Link} from 'react-router-dom'
+import {format} from 'date-fns'
+const Post = ({title,summary,cover,content,createdAt,author}) => {
   return (
     <div className="post">
         <div className="image">
-        <img src="https://techcrunch.com/wp-content/uploads/2023/07/ETH-zurich-pixar-smoke.jpg?w=1390&crop=1"/>
+          <Link>
+          </Link>
+        <img src={"http://localhost:4000/"+cover}/>
         </div>
         <div className="texts">
-        <h2>VFX artists show that Hollywood can use AI to create, not exploit</h2>
+        <h2>{title}</h2>
         <p className="info">
-          <a className="author">Dawid Pazeko</a>
-          <time> 2023-01-06 16:45</time>
+          <a className="author">{author.username}</a>
+          <time> {format(new Date(createdAt),'d-MM-yyyy HH:mm')}</time>
         </p>
-        <p className="summary">Jio Platforms on Monday launched the AirFiber, a wireless plug-and-play 5G hotspot, as the top Indian top telecom operator races to make a dent to the broadband market.</p>
+        <p className="summary">{summary}</p>
         </div>
         </div>
   )
