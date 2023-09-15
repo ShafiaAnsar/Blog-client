@@ -10,7 +10,7 @@ img{
 }
 main{
     padding: 10px;
-    max-width: 700px;
+    max-width: 960px;
     margin: 0 auto;
 }
 header{
@@ -34,9 +34,15 @@ header nav{
 }
 div.post {
     display: grid;
-    grid-template-columns: 0.9fr 1.1fr;
+    grid-template-columns: 1fr;
+    /* grid-template-columns: 0.9fr 1.1fr; */
     gap: 20px;
     margin-bottom: 30px;
+}
+@media screen and (min-width:700px) {
+    div.post{
+        grid-template-columns: 0.9fr 1.1fr;
+    }
 }
 div.post div.texts h2{
     margin: 0;
@@ -102,4 +108,37 @@ form.login h1 ,form.register h1{
   }
   .Toastify__close-button {
     margin-top: 15px; 
+  }
+  div.post-page div.image{
+    max-height: 200px;
+    display: flex;
+    overflow: hidden;
+  }
+  div.post-page div.image img{
+    object-fit: cover;
+    object-position: center center;
+    width: 100%;
+  }
+  div.post-page a{
+    color: #333;
+    text-decoration: underline;
+  }
+  div.post-page h1{
+    text-align: center;
+    margin: 10px 0 5px;
+  }
+  div.post-page time{
+    text-align: center;
+    font-size: .7rem;
+    display: block;
+    color: #aaa;
+  }
+  div.post-page div.author{
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 0.7rem;
+    font-weight: bold;
+  }
+  div.post-page div.content p{
+    line-height: 1.6rem;
   }
