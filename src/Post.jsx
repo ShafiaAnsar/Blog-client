@@ -4,12 +4,15 @@ const Post = ({title,summary,cover,content,createdAt,author}) => {
   return (
     <div className="post">
         <div className="image">
-          <Link>
+          <Link to={'/post/id'}>
+          <img src={"http://localhost:4000/"+cover}/>
           </Link>
-        <img src={"http://localhost:4000/"+cover}/>
+        
         </div>
         <div className="texts">
-        <h2>{title}</h2>
+          <Link to={'post/id'}>
+          <h2>{title}</h2>
+          </Link>
         <p className="info">
           <a className="author">{author.username}</a>
           <time> {format(new Date(createdAt),'d-MM-yyyy HH:mm')}</time>
