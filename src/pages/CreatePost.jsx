@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import {Navigate } from "react-router-dom"
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 
@@ -26,7 +27,7 @@ const CreatePost = () => {
     content: '',
     files: null, // Initialize 'files' as null
   });
-
+const [redirect ,setRedirect] = useState(false)
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setInputValue({
@@ -58,8 +59,13 @@ const CreatePost = () => {
       method: 'POST',
       body: data, // Send the FormData with the request
     })
+    if( response.ok){
+      setRedirect(true)
+    }
   };
-
+if (redirect){
+  return <Navigate to={'/'} />
+}
   return (
     <form onSubmit={createPost}>
       <input
