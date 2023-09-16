@@ -15,7 +15,7 @@ const PostPage = () => {
             })
         })
 
-    },[])
+    },[id])
 
     if(!postInfo) return ''
     return (

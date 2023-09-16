@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import {Navigate } from "react-router-dom"
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Editor from '../Editor';
 const CreatePost = () => {
   const [inputValue, setInputValue] = useState({
@@ -44,6 +46,10 @@ const [redirect ,setRedirect] = useState(false)
     if( response.ok){
       setRedirect(true)
     }
+    else if (response.status === 400){
+      toast.error('All fields are required', { position: 'top-center' });
+    }
+    
   };
 if (redirect){
   return <Navigate to={'/'} />
