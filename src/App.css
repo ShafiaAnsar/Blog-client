@@ -103,42 +103,62 @@ form.login h1 ,form.register h1{
 .Toastify__toast-body {
     white-space: nowrap;
   }
-  .Toastify__toast {
+.Toastify__toast {
     text-align: center;
   }
-  .Toastify__close-button {
+.Toastify__close-button {
     margin-top: 15px; 
   }
-  div.post-page div.image{
-    max-height: 200px;
+div.post-page div.image{
+    max-height: 300px;
     display: flex;
+    align-items: center;
+    justify-content: center;
     overflow: hidden;
   }
-  div.post-page div.image img{
+div.post-page div.image img{
     object-fit: cover;
-    object-position: center center;
+    object-position:center;
     width: 100%;
   }
-  div.post-page a{
+div.post-page a{
     color: #333;
     text-decoration: underline;
   }
-  div.post-page h1{
+div.post-page h1{
     text-align: center;
     margin: 10px 0 5px;
   }
-  div.post-page time{
+div.post-page time{
     text-align: center;
     font-size: .7rem;
     display: block;
     color: #aaa;
   }
-  div.post-page div.author{
+div.post-page div.author{
     text-align: center;
     margin-bottom: 20px;
     font-size: 0.7rem;
     font-weight: bold;
   }
-  div.post-page div.content p{
+div.post-page div.content p{
     line-height: 1.6rem;
   }
+div.edit-row{
+    text-align: center;
+}
+div.post-page  a.edit-btn{
+    background-color: #333;
+    color: #ffff;
+    padding: 15px 30px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+a svg{
+    height: 20px;
+}
