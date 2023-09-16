@@ -9,6 +9,13 @@ const EditPost = () => {
     content: '',
     files: null,
   });
+  const handleFileChange = (e) => {
+    const file = e.target.files[0]; // Get the first selected file
+    setInputValue({
+      ...inputValue,
+      files: file, // Update 'files' with the selected file
+    });
+  };
   const { id } = useParams();
   const [redirect, setRedirect] = useState(false);
 
@@ -40,26 +47,23 @@ const EditPost = () => {
 
   const updatePost =async (e) => {
     e.preventDefault();
-    // Perform the update post logic here
-    
+
     const data = new FormData();
     data.set('title', title);
-    data.set('id',id)
     data.set('summary', summary);
     data.set('content', content);
-    if (files?.[0]) {
-  data.append('file', files[0]);
-}
+    data.set('id',id)
+    data.append('file', files); // Use append to add the file to the FormData
 
-    const  response = await fetch('http://localhost:4000/post',{
-        method:'PUT',
-        body:data
+    const response=await fetch('http://localhost:4000/post', {
+      method: 'PUT',
+      body: data, // Send the FormData with the request
+      credentials:'include'
     })
-    if(response.ok)
-    {
-        setRedirect(true)
+    if( response.ok){
+      setRedirect(true)
     }
-    
+    console.log(e.target.files)
   };
 
   if (redirect) {
@@ -67,7 +71,7 @@ const EditPost = () => {
   }
 
   return (
-    <form onSubmit={updatePost}>
+    <form encType="multipart/form-data" onSubmit={updatePost}>
 <input
   type="text"
   name="title"
@@ -82,7 +86,7 @@ const EditPost = () => {
   value={summary}
   onChange={(e) => setInputValue({ ...inputValue, summary: e.target.value })}
 />
-      <input type="file" />
+      <input type="file" name="file" onChange={handleFileChange} />
       <Editor value={content} onChange={(content) => setInputValue({ ...inputValue, content })} />
       <button style={{ marginTop: '5px', backgroundColor: 'black' }} type="submit">
         Update Post

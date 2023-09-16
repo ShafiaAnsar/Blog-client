@@ -12,9 +12,10 @@ const IndexPage = () => {
   },[])
   return (
     <>
-    {posts.length>0  && posts.map(post => (
-      <Post {...post}/>
-    ))}
+    {posts.length > 0 && posts.map((post) => (
+  <Post key={post.id} {...post} />
+))}
+
     </>
   )
 }
