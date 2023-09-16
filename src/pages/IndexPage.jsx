@@ -10,8 +10,12 @@ const IndexPage = () => {
       })
     })
   },[])
+  if(posts.length == 0){
+   return  <h1>Create new Post</h1>
+  }
   return (
     <>
+   
     {posts.length > 0 && posts.map((post) => (
   <Post key={post.id} {...post} />
 ))}
