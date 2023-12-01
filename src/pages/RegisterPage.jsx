@@ -37,7 +37,7 @@ const RegisterPage = () => {
     try {
       setLoading(true);
 
-      const response = await fetch('http://localhost:4000/register', {
+      const response = await fetch('https://blog-api-shafiaansar.vercel.app/register', {
         method: 'POST',
         body: JSON.stringify({ username, email, password }),
         headers: { 'Content-Type': 'application/json' },
