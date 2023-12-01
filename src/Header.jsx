@@ -6,7 +6,7 @@ export default function Header() {
   const {setUserInfo,userInfo} = useContext(UserContext);
   const navigate = useNavigate()
   useEffect(() => {
-    fetch('https://blog-api-shafiaansar.vercel.app/profile', {
+    fetch('https://blog-nwgsiqhy2-shafiaansar.vercel.app/profile', {
       credentials: 'include',
     }).then(response => {
       response.json().then(userInfo => {
