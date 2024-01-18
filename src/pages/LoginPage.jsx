@@ -32,7 +32,7 @@ const LoginPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch('https://blog-api-shafiaansar.vercel.app/login', {
+    const response = await fetch('https://blog-api-liart.vercel.app/login', {
 
       method: 'POST',
       body: JSON.stringify({ username, password }),

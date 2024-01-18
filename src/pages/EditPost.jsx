@@ -21,7 +21,7 @@ const EditPost = () => {
 
   useEffect(() => {
     // Fetch the post information and set the initial values
-    fetch(`https://blog-api-shafiaansar.vercel.app/post/${id}`)
+    fetch(`https://blog-api-liart.vercel.app/post/${id}`)
       .then((response) => {
         if (response.ok) {
           return response.json();
@@ -55,7 +55,7 @@ const EditPost = () => {
     data.set('id',id)
     data.append('file', files); // Use append to add the file to the FormData
 
-    const response=await fetch('https://blog-api-shafiaansar.vercel.app/post', {
+    const response=await fetch('https://blog-api-liart.vercel.app/post', {
       method: 'PUT',
       body: data, // Send the FormData with the request
       credentials:'include'

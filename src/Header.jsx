@@ -6,7 +6,7 @@ export default function Header() {
   const {setUserInfo,userInfo} = useContext(UserContext);
   const navigate = useNavigate()
   useEffect(() => {
-    fetch('https://blog-nwgsiqhy2-shafiaansar.vercel.app/profile', {
+    fetch('https://blog-api-liart.vercel.app/profile', {
       credentials: 'include',
     }).then(response => {
       response.json().then(userInfo => {
@@ -16,7 +16,7 @@ export default function Header() {
   }, []);
 
   function logout() {
-    fetch('https://blog-api-shafiaansar.vercel.app/logout', {
+    fetch('https://blog-api-liart.vercel.app/logout', {
       credentials: 'include',
       method: 'POST',
     });
